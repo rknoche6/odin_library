@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --highlight: #101f33;
+    --dark: #062a5e;
+    --light: #BED1B7;
+    --finished: #46d346;
+    --not_finished: #db0d1e;
+    --card: #457B9D
+}
+html, body{
+    margin: 0 1em;
+    padding: 0;
+    font-family: 'Times New Roman', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3em auto;
+}
+
+.btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.75em 1em;
+    color: var(--light);
+    font-size: 1.3rem;
+}
+
+h1{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1em;
+    text-decoration: underline 0.1rem;
+}
+
+.form_group{
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_group.radio_form{
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#add_to_library{
+    background-color: var(--highlight);
+    width: 100%;
+}
+
+.book_card{
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 0 1rem 2rem 1rem;
+    width: 250px;
+    height: calc(1.5 * 250px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    background-color: var(--card);
+    color:var(--light);
+}
+
+.card_child{
+    text-align: center;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.book_author{
+    font-size: 1.5rem;
+}
+
+.book_title{
+    font-size: 3rem;
+}
+
+.book_read{
+    width: 85%;
+}
+
+.not_finished{
+    background-color: var(--not_finished);
+}
+
+.finished{
+    background-color: var(--finished);
+}
+#shelf{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+#book_form{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.form_control{
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.close{
+    background-color: var(--highlight);
+    border-radius: 100%;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    margin: 0;
+    transform: scale(0.45);
+}
+
+.close:hover {
+  opacity: 3;
+  color: red;
+}
+
+.footer {
+  font-size: 1.2rem;
+  position: relative;
+  left: -2;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+  color: black;
+  text-align: right;
+}
