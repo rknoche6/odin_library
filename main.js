@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return new_book;
     };
 
-    // Adding books to the book shelf
+    // showing books from the book shelf
     const displayLibrary = (firstLoad = false) => {
         const shelf = document.getElementById('shelf');
         const bookForm = document.getElementById('book_form')
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         let closeBtns = document.querySelectorAll('.close');
         let readBtns = document.querySelectorAll('.book_read');
+        // Removing the book card
         if (firstLoad == true) {
             closeBtns.forEach(btn => {
                 btn.addEventListener('click', e => {
@@ -76,16 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         } else {
             closeBtns[closeBtns.length - 1].addEventListener('click', e => {
-                // Selecting the title for deletion
                 const titleDlt = e.target.parentElement.querySelector(".book_title").innerHTML;
-                // Finding the location of the object with this title
                 const indexDlt = myLibrary.findIndex(x => x.title === titleDlt);
-                // Removing that object form the library array and updating local storage
                 myLibrary.splice(indexDlt, 1);
                 localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
-                // Removing the book card
                 e.target.parentElement.remove();
             })
+        //changing the button from read to not read
             readBtns[readBtns.length - 1].addEventListener('click', e => {
                 const titleDlt = e.target.parentElement.querySelector(".book_title").innerHTML;
                 const indexDlt = myLibrary.findIndex(x => x.title === titleDlt);
